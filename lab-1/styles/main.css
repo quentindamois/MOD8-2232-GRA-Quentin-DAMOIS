@@ -36,3 +36,6 @@ body {
 :link {
     color: var(--color-link)
 }
+:visited {
+    color: var(--color-link-visited);
+}
