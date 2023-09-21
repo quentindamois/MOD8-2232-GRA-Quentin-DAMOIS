@@ -11,4 +11,11 @@
     --dark-color-5  : rgba(125,125,125);
     /*Setting the base color theme
     The base color theme is the light theme.*/
+    --color-background: var(--light-color-1);
+    --color-border: var(--light-color-2);
+    --color-heading: var(--light-color-3);
+    --color-text: var(--light-color-3);
+    --color-link:var(--light-color-4);
+    --color-link-visited: var(--light-color-5);
+}
 }
