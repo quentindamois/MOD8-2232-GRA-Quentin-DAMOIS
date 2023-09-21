@@ -33,9 +33,9 @@ body {
     border-color: var(--color-border);
     color: var(--color-text);
 }
-:link {
-    color: var(--color-link)
+a {
+    color: var(--color-link);
 }
-:visited {
+a :visited {
     color: var(--color-link-visited);
 }
