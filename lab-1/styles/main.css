@@ -28,6 +28,10 @@ body {
     background-color: var(--color-background);
     border-color: var(--color-border);
     color: var(--color-text);
+    text-align: center;
+    display: wrap block;
+    margin: 10px;
+    padding: 1%;
 }
 a {
     color: var(--color-link);
