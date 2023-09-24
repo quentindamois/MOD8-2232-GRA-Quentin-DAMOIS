@@ -48,6 +48,8 @@ menu {
 ul li {
     text-align: left;
 }
+h1, h2, h3, h4, h5 {
+}
 @media (min-width: 499px) {
     body {
         display: grid;
@@ -60,3 +62,4 @@ ul li {
         padding: 0 10rem;
     }
 }
+
