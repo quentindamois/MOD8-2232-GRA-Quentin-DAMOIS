@@ -1,7 +1,6 @@
 function newentry() {
     let inputednames = document.getElementById("name");
     let inputedbirthday = document.getElementById("birthday");
-    //let inputedliscence = document.getElementsByName("driving");
     let inputedbrand = document.getElementById("car-brand");
     let inputedtransportation = document.getElementsByName("way");
     let inputednumber = document.getElementById("car-number");
@@ -17,7 +16,6 @@ function newentry() {
     else {
         colliscence.textContent = "No";
     }
-    //colliscence.textContent = inputedliscence.value;
     let colbrand = document.createElement("td")
     colbrand.textContent = inputedbrand.value;
     let coltransportation = document.createElement("td")
