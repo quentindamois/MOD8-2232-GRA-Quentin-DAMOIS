@@ -54,6 +54,7 @@ ul li {
         font-size: larger;
     }
     table {
+        align-self: center;
     }
     form {
     }
