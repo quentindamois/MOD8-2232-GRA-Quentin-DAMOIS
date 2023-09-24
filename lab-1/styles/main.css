@@ -48,4 +48,6 @@ menu {
 ul li {
     text-align: left;
 }
+@media (min-width: 499px) {
+    }
 }
