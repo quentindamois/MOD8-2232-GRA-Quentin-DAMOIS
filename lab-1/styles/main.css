@@ -51,5 +51,7 @@ ul li {
 @media (min-width: 499px) {
     body {
     }
+    table {
+    }
     }
 }
