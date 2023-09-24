@@ -42,4 +42,7 @@ table {
 td {
     border: solid var(--color-border);
 }
+menu {
+    text-align: left;
+}
 }
