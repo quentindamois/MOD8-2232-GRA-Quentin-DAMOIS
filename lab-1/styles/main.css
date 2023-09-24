@@ -50,6 +50,8 @@ ul li {
 h1, h2, h3, h4, h5 {
     color: var(--color-heading);
 }
+h1 a {
+}
 @media (min-width: 499px) {
     body {
         display: grid;
