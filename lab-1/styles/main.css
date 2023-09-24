@@ -57,5 +57,6 @@ ul li {
         align-self: center;
     }
     form {
+        padding: 0 10rem;
     }
 }
