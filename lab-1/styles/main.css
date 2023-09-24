@@ -50,6 +50,8 @@ ul li {
 }
 @media (min-width: 499px) {
     body {
+        display: grid;
+        font-size: larger;
     }
     table {
     }
