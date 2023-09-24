@@ -33,4 +33,7 @@ function newentry() {
     colnumber.textContent = inputednumber.value;
     newrow.append(colnames, colbirthady, colliscence, coltransportation, colbrand, colnumber);
     document.getElementById("changing-table").appendChild(newrow);
+    let entreelist = document.createElement("li");
+    entreelist.textContent = inputednames.value;
+    document.getElementById("list-user").appendChild(entreelist);
 }
