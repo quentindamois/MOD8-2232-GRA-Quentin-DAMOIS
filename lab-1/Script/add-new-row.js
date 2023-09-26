@@ -10,7 +10,7 @@ function newentry() {
     let colbirthady = document.createElement("td")
     colbirthady.textContent = inputedbirthday.value;
     let colliscence = document.createElement("td")
-    if(document.getElementById("driving-yes").checked) {
+    if(document.getElementById("majority-yes").checked) {
         colliscence.textContent = "Yes";
     }
     else {
