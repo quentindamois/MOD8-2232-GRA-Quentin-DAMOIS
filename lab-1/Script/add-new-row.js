@@ -19,8 +19,8 @@ function newentry() {
     colbrand.textContent = inputedbrand.value;
     let coltransportation = document.createElement("td")
     coltransportation.textContent = "";
-    if (document.getElementById("way-walk").checked) {
         coltransportation.textContent += "Walk "
+    if (document.getElementById("recommandation-commertial").checked) {
     }
     if (document.getElementById("way-bycilce").checked) {
         coltransportation.textContent += "Bike "
