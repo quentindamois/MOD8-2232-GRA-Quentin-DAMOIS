@@ -19,7 +19,7 @@ function newentry() {
     colbrand.textContent = inputedbrand.value;
     let coltransportation = document.createElement("td")
     coltransportation.textContent = "";
-    if (document.getElementById("recommandation-commertial").checked) {
+    if (document.getElementById("recommandation-commercial").checked) {
         coltransportation.textContent += "Commercial "
     }
     if (document.getElementById("recommandation-content").checked) {
