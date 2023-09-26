@@ -25,8 +25,8 @@ function newentry() {
     if (document.getElementById("recommandation-content").checked) {
         coltransportation.textContent += "Content "
     }
-    if (document.getElementById("way-subway").checked) {
         coltransportation.textContent += "Subway"
+    if (document.getElementById("recommandation-product").checked) {
     }
     let colnumber = document.createElement("td")
     colnumber.textContent = inputednumber.value;
