@@ -1,7 +1,7 @@
 function newentry() {
     let inputednames = document.getElementById("name");
     let inputedbirthday = document.getElementById("birthday");
-    let inputedbrand = document.getElementById("car-brand");
+    let inputedbrand = document.getElementById("language");
     let inputednumber = document.getElementById("telephone-number");
     let newrow = document.createElement("tr");
     let colnames = document.createElement("td")
