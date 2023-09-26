@@ -2,7 +2,6 @@ function newentry() {
     let inputednames = document.getElementById("name");
     let inputedbirthday = document.getElementById("birthday");
     let inputedbrand = document.getElementById("car-brand");
-    let inputedtransportation = document.getElementsByName("way");
     let inputednumber = document.getElementById("car-number");
     let newrow = document.createElement("tr");
     let colnames = document.createElement("td")
