@@ -22,8 +22,8 @@ function newentry() {
     if (document.getElementById("recommandation-commertial").checked) {
         coltransportation.textContent += "Commercial "
     }
-    if (document.getElementById("way-bycilce").checked) {
         coltransportation.textContent += "Bike "
+    if (document.getElementById("recommandation-content").checked) {
     }
     if (document.getElementById("way-subway").checked) {
         coltransportation.textContent += "Subway"
