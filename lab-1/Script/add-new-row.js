@@ -26,6 +26,7 @@ function newentry() {
         coltransportation.textContent += "Content "
     }
     if (document.getElementById("recommandation-product").checked) {
+        coltransportation.textContent += "product"
     }
     let colnumber = document.createElement("td")
     colnumber.textContent = inputednumber.value;
