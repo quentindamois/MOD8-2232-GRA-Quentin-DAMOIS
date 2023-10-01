@@ -10,11 +10,6 @@ const linkToBookPage = computed(() => {
 
 <template>
     <RouterLink :to="linkToBookPage">lien</RouterLink>
-    <h1>
-        |{{ linkToBookPage }}|
-        kj mkjnmlkn
-        {{ identification.IdOfBook }}
-    </h1>
         <h3>
             Book's title :
         </h3>
