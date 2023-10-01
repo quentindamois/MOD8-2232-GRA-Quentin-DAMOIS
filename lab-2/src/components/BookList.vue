@@ -7,7 +7,8 @@ const BookList = ref([
   {Id: ++id.value, Title: "King Lear", Author: "Sheakspear", Page: 80}
 ])
 const searchTerms = defineProps({
-    terms: String
+    terms: String,
+    BookGroups: Object
 })
 </script>
 <template>
