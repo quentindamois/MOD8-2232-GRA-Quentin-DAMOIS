@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import BookMiniature from './BookMiniature.vue';
+import BookItem from './BookItem.vue';
 let id = ref(0)
 const BookList = ref([
   {Id: ++id.value,Title: "Necronomicon", Author: "Lovecraft",  Page: 149},
@@ -19,7 +19,7 @@ const searchTerms = defineProps({
     <ul>
         <div v-if="searchTerms.terms == ''">
         <li  v-for="book in searchTerms.BookGroups" :key="book.Id">
-            <BookMiniature :IdOfBook="book.Id">
+            <BookItem :IdOfBook="book.Id">
                 <template #Author>
                     {{ book.Author }}
                 </template>
@@ -29,13 +29,13 @@ const searchTerms = defineProps({
                 <template #Page>
                     {{ book.Page }}
                 </template>
-            </BookMiniature>
+            </BookItem>
         <RouterView />
         </li>
     </div>
     <div v-else>
-        <li  v-for="book in BookList.filter((b) => { return searchTerms.terms === b.Author || searchTerms.terms === b.Title || searchTerms.terms === b.Page})" :key="book.Id">
-                <BookMiniature :IdOfBook="book.Id">
+        <li  v-for="book in BookList.filter((b) => { return searchTerms.terms.toLowerCase() === (b.Title.substring(0, searchTerms.terms.length)).toLowerCase() })" :key="book.Id">
+                <BookItem :IdOfBook="book.Id">
                 <template #Author>
                     {{ book.Author }}
                 </template>
@@ -45,7 +45,7 @@ const searchTerms = defineProps({
                 <template #Page>
                     {{ book.Page }}
                 </template>
-            </BookMiniature>
+            </BookItem>
         </li>
     </div>
     </ul>
