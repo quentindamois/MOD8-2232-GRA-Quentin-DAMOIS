@@ -22,6 +22,6 @@ const BookArray = ref([
     <BookForm :label-button="'Save'" @response="(bookEntered) => {
         BookArray[this.$route.params.id].Title = bookEntered.Title;
         BookArray[this.$route.params.id].Author = bookEntered.Author;
-        BookArray[this.$route.params.id].Page = bookEntered.Author
+        BookArray[this.$route.params.id].Page = bookEntered.Page;
     }"/>
 </template>
