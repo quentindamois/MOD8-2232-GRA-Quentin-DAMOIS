@@ -9,7 +9,7 @@ const linkToBookPage = computed(() => {
 </script>
 
 <template>
-    <RouterLink :to="linkToBookPage">lien</RouterLink>
+    <RouterLink :to="linkToBookPage">
         <h3>
             Book's title :
         </h3>
@@ -25,6 +25,7 @@ const linkToBookPage = computed(() => {
     </h3>
     <slot name="Page" id="page-book">
     </slot>
+    </RouterLink>
 </template>
 
 <style>
