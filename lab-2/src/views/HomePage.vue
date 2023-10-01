@@ -14,5 +14,5 @@ const termsEntered = ref("")
         You're on the HomePage.
     </h1>
     <BookNav @user-input="(SearchTearm) => termsEntered = SearchTearm"/>
-    <BookList :terms="termsEntered" V-model:BookGroups="BookArray"/>
+    <BookList :terms="termsEntered" :BookGroups="BookArray"/>
 </template>
