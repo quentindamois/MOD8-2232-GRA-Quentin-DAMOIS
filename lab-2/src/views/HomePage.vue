@@ -5,8 +5,7 @@ import BookList from '../components/BookList.vue';
 let id = ref(0);
 const BookArray = ref([
   {Id: ++id.value, Title: "Necronomicon", Author: "Lovecraft",  Page: 149},
-  {Id: ++id.value, Title: "King Lear", Author: "Sheakspear", Page: 80},
-  {Id: ++id.value, Title: "Blanche Neiges", Author: "Brother Grims", Page: 20}
+  {Id: ++id.value, Title: "King Lear", Author: "Sheakspear", Page: 80}
 ])
 const termsEntered = ref("")
 </script>
