@@ -3,8 +3,8 @@ import { ref } from 'vue'
 import BookMiniature from './BookMiniature.vue';
 let id = ref(0)
 const BookList = ref([
-  {Id: ++id,Title: "Necronomicon", Author: "Lovecraft",  Page: 149},
-  {Id: ++id, Title: "King Lear", Author: "Sheakspear", Page: 80}
+  {Id: ++id.value,Title: "Necronomicon", Author: "Lovecraft",  Page: 149},
+  {Id: ++id.value, Title: "King Lear", Author: "Sheakspear", Page: 80}
 ])
 const searchTerms = defineProps({
     terms: String
