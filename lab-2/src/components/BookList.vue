@@ -13,18 +13,11 @@ const searchTerms = defineProps({
 <template>
 
     <h2>
-        This is the booklist. {{ searchTerms.terms }}
+        This is the booklist.
     </h2>
     <ul>
         <div v-if="searchTerms.terms == ''">
-            <h1>
-                There is no filter.
-            </h1>
         <li  v-for="book in BookList" :key="book.Id">
-            <h1>
-                {{ book.Id }}
-                eeeeeeeeeeeeeee
-            </h1>
             <BookMiniature :IdOfBook="book.Id">
                 <template #Author>
                     {{ book.Author }}
@@ -40,9 +33,6 @@ const searchTerms = defineProps({
         </li>
     </div>
     <div v-else>
-        <h1>
-            Yes filter
-        </h1>
         <li  v-for="book in BookList" :key="book.Id">
             <div v-if="searchTerms.terms === book.Author || searchTerms.terms === book.Title || searchTerms.terms === book.Page">
                 rtghh
