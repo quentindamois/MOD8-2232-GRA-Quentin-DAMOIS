@@ -19,6 +19,9 @@ const BookArray = ref([
             {{ BookArray[this.$route.params.id].Page }}
         </li>
     </ul>
+    <h5>
+        link
+    </h5>
     <BookForm :label-button="'Save'" @response="(bookEntered) => {
         BookArray[this.$route.params.id].Title = bookEntered.Title;
         BookArray[this.$route.params.id].Author = bookEntered.Author;
