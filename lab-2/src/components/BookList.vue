@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import BookMiniature from './BookMiniature.vue';
 let id = ref(0)
 const BookList = ref([
@@ -34,8 +34,7 @@ const searchTerms = defineProps({
         </li>
     </div>
     <div v-else>
-        <li  v-for="book in BookList" :key="book.Id">
-            <div v-if="searchTerms.terms === book.Author || searchTerms.terms === book.Title || searchTerms.terms === book.Page">
+        <li  v-for="book in BookList.filter((b) => { return searchTerms.terms === b.Author || searchTerms.terms === b.Title || searchTerms.terms === b.Page})" :key="book.Id">
                 <BookMiniature :IdOfBook="book.Id">
                 <template #Author>
                     {{ book.Author }}
@@ -47,7 +46,6 @@ const searchTerms = defineProps({
                     {{ book.Page }}
                 </template>
             </BookMiniature>
-            </div>
         </li>
     </div>
     </ul>
