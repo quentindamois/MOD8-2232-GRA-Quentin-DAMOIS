@@ -35,7 +35,17 @@ const searchTerms = defineProps({
     <div v-else>
         <li  v-for="book in BookList" :key="book.Id">
             <div v-if="searchTerms.terms === book.Author || searchTerms.terms === book.Title || searchTerms.terms === book.Page">
-                rtghh
+                <BookMiniature :IdOfBook="book.Id">
+                <template #Author>
+                    {{ book.Author }}
+                </template>
+                <template #Title>
+                    {{ book.Title }}
+                </template>
+                <template #Page>
+                    {{ book.Page }}
+                </template>
+            </BookMiniature>
             </div>
         </li>
     </div>
