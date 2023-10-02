@@ -25,6 +25,9 @@ const linkToBookPage = computed(() => {
     </h3>
     <slot name="Page" id="page-book">
     </slot>
+    <h5>
+        Click on the book's title or the book's Author or the page Count to seee the book page.
+    </h5>
     </RouterLink>
 </template>
 
