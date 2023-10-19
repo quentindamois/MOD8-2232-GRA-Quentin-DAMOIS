@@ -2,7 +2,7 @@ import express from 'express'
 import validator from '../../validators/book-validator.js'
 import repository from '../../persistence/book-repository.js'
 import createPaginator from '../../utility/paginator.js'
-import authenticater from '../../middleware/authentication-request.js'
+import authenticater from '../../middleware/authenticator-request.js'
 import {checkAuthorization} from '../../middleware/authorizer-request.js'
 const authorazation = checkAuthorization('librarian')
 const router = express.Router()
