@@ -77,7 +77,10 @@ function addFindCommandConditions(options, conditions, parameters) {
 
 const createBook = async (title, author, year, pageCount, description) => {
   // TODO
-  return null
+  console.log("work so far")
+  const sql = 'INSERT INTO books (title, author, year, page_count, description) VALUES (?,?,?,?,?);'
+  const [result] = await database.execute(sql, [title, author, year, pageCount, description])
+  return result
 }
 
 const updateBook = async (id, title, author, year, pageCount, description) => {

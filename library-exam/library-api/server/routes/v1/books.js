@@ -36,11 +36,20 @@ router.get('/books', async (req, res, next) => {
 router.post('/books', async (req, res, next) => {
   try {
     // TODO
-    res.status(404).json({ error: { message: 'Route not implemented.' } })
+    const title = req.body.title
+    const author = req.body.author
+    const year = req.body.year
+    const pageCount = req.body.pageCount
+    const description = req.body.description
+    const err = validator.validateCreateBook(title, author, year, pageCount, description)
+    
   } catch (err) {
+    res.status(400).json({ error: { message: 'invalide parameter' } })
     // Catch any internal server error
     next(err) // Pass error to next error handler middleware
   }
+  result = await repository.createBook(title, author, year, pageCount, description)
+  res.sendStatus(201)
 })
 
 // GET request handler for /books/:id endpoint (public)
