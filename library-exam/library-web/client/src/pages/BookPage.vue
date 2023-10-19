@@ -101,7 +101,7 @@ function canEditBook() {
       <BookHeader :book="book" />
       <p>{{ book.description }}</p>
 
-      <button @click="editBook" class="edit" v-if="authenticationService.userIsAuthenticated && (authenticationService.user==librarian)"><EditIcon /></button>
+      <button @click="editBook" class="edit" v-if="(authenticationService.userIsAuthenticated) && (authenticationService.user=='librarian')"><EditIcon /></button>
 
       <BookForm
         v-if="formIsEnabled"

@@ -58,7 +58,7 @@ function collapseWhitespace(string) {
           <li>
             <div><RouterLink :to="{ name: 'about' }">About</RouterLink></div>
           </li>
-          <li v-if="authenticationService.user == 'librarian'">
+          <li v-if="(authenticationService.userIsAuthenticated) && (authenticationService.user=='librarian')">
             <div><RouterLink :to="{ name: 'add' }">Add book</RouterLink></div>
           </li>
           <li v-if="!authenticationService.userIsAuthenticated">
