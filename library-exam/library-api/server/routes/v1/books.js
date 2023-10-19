@@ -2,9 +2,9 @@ import express from 'express'
 import validator from '../../validators/book-validator.js'
 import repository from '../../persistence/book-repository.js'
 import createPaginator from '../../utility/paginator.js'
-import authenticationRepository from '../../persistence/authentication-repository.js'
-import authorizerRepository from '../../persistence/authorizer-repository.js'
-const authentication = authenticationRepository()
+import authenticater from '../../middleware/authentication-request.js'
+import {checkAuthorization} from '../../middleware/authorizer-request.js'
+const authorazation = checkAuthorization('librarian')
 const router = express.Router()
 
 // GET request handler for /books endpoint (public)
@@ -35,7 +35,7 @@ router.get('/books', async (req, res, next) => {
 })
 
 // POST request handler for /books endpoint (authenticated + authorized)
-router.post('/books', authenticationRepository(), authenticationRepository.checkAuthorization('librarian'), async (req, res, next) => {
+router.post('/books', authenticater, authorazation, async (req, res, next) => {
   try {
     // TODO
     const title = req.body.title
@@ -79,7 +79,7 @@ router.get('/books/:id', async (req, res, next) => {
 })
 
 // PUT request handler for /books/:id endpoint (authenticated + authorized)
-router.put('/books/:id',  authenticationRepository(), authenticationRepository.checkAuthorization('librarian'), async (req, res, next) => {
+router.put('/books/:id', authenticater, authorazation, async (req, res, next) => {
   try {
     const id = Number.parseInt(req.params.id)
     const title = req.body.title
@@ -109,7 +109,7 @@ router.put('/books/:id',  authenticationRepository(), authenticationRepository.c
 })
 
 // PATCH request handler for /books/:id endpoint (authenticated + authorized)
-router.patch('/books/:id',  authenticationRepository(), authenticationRepository.checkAuthorization('librarian'), async (req, res, next) => {
+router.patch('/books/:id', authenticater, authorazation, async (req, res, next) => {
   try {
     const id = Number.parseInt(req.params.id)
     const title = req.body.title
@@ -139,7 +139,7 @@ router.patch('/books/:id',  authenticationRepository(), authenticationRepository
 })
 
 // DELETE request handler for /books/:id endpoint (authenticated + authorized)
-router.delete('/books/:id', authenticationRepository(), authenticationRepository.checkAuthorization('librarian'), async (req, res, next) => {
+router.delete('/books/:id', authenticater, authorazation, async (req, res, next) => {
   try {
     const id = Number.parseInt(req.params.id)
 
