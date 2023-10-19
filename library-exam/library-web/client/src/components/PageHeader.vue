@@ -52,22 +52,22 @@ function collapseWhitespace(string) {
       </div>
       <nav>
         <ul>
-          <li>
+          <li >
             <div><RouterLink :to="{ name: 'home' }">Home</RouterLink></div>
           </li>
           <li>
             <div><RouterLink :to="{ name: 'about' }">About</RouterLink></div>
           </li>
-          <li>
+          <li v-if="authenticationService.user == 'librarian'">
             <div><RouterLink :to="{ name: 'add' }">Add book</RouterLink></div>
           </li>
-          <li>
+          <li v-if="!authenticationService.userIsAuthenticated">
             <div><RouterLink :to="{ name: 'signup' }">Sign up</RouterLink></div>
           </li>
-          <li>
+          <li v-if="!authenticationService.userIsAuthenticated">
             <div><RouterLink :to="{ name: 'login' }">Log in</RouterLink></div>
           </li>
-          <li>
+          <li v-if="authenticationService.userIsAuthenticated">
             <div><a @click="authenticationService.logOut">Log out</a></div>
           </li>
         </ul>
