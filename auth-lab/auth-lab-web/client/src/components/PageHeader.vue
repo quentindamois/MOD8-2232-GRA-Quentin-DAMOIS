@@ -8,6 +8,7 @@ const home = 'home'
 const route = useRoute()
 const router = useRouter()
 const authenticationService = useAuthenticationService()
+
 const searchText = ref(route.query.search || '')
 
 router.afterEach((to, from) => {
@@ -52,22 +53,22 @@ function collapseWhitespace(string) {
       </div>
       <nav>
         <ul>
-          <li>
+          <li >
             <div><RouterLink :to="{ name: 'home' }">Home</RouterLink></div>
           </li>
           <li>
             <div><RouterLink :to="{ name: 'about' }">About</RouterLink></div>
           </li>
-          <li>
-            <div><RouterLink :to="{ name: 'add' }">Add product</RouterLink></div>
+          <li v-if="authenticationService.user.value != null && authenticationService.user.value.role == 'manager'">
+            <div ><RouterLink :to="{ name: 'add' }">Add product</RouterLink></div>
           </li>
-          <li>
+          <li v-if="authenticationService.user.value == null">
             <div><RouterLink :to="{ name: 'signup' }">Sign up</RouterLink></div>
           </li>
-          <li>
+          <li v-if="authenticationService.user.value == null">
             <div><RouterLink :to="{ name: 'login' }">Log in</RouterLink></div>
           </li>
-          <li>
+          <li v-if="authenticationService.user.value != null">
             <div><a @click="authenticationService.logOut">Log out</a></div>
           </li>
         </ul>

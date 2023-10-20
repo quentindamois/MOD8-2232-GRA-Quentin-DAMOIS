@@ -3,8 +3,10 @@ import validator from '../../validators/product-validator.js'
 import repository from '../../persistence/product-repository.js'
 import createPaginator from '../../utility/paginator.js'
 import authenticator from '../../middleware/request-authenticator.js'
-import authorize from '../../middleware/request-authorizer.js'
+import { createAuthorizer } from '../../middleware/request-authorizer.js'
 const router = express.Router()
+
+const authoriseManager = createAuthorizer("manager")
 
 // GET request handler for /products endpoint (public)
 router.get('/products', async (req, res, next) => {
@@ -34,7 +36,7 @@ router.get('/products', async (req, res, next) => {
 })
 
 // POST request handler for /products endpoint (authenticated + authorized)
-router.post('/products', authenticator, authorize('manager'), async (req, res, next) => {
+router.post('/products', authenticator, authoriseManager, async (req, res, next) => {
   try {
     const name = req.body.name
     const price = roundPrice(req.body.price)
@@ -81,7 +83,7 @@ router.get('/products/:id', async (req, res, next) => {
 })
 
 // PUT request handler for /products/:id endpoint (authenticated + authorized)
-router.put('/products/:id', authenticator, authorize('manager'), async (req, res, next) => {
+router.put('/products/:id', authenticator, authoriseManager, async (req, res, next) => {
   try {
     const id = Number.parseInt(req.params.id)
     const name = req.body.name
@@ -109,7 +111,7 @@ router.put('/products/:id', authenticator, authorize('manager'), async (req, res
 })
 
 // PATCH request handler for /products/:id endpoint (authenticated + authorized)
-router.patch('/products/:id', authenticator, authorize('manager'), async (req, res, next) => {
+router.patch('/products/:id', authenticator, authoriseManager, async (req, res, next) => {
   try {
     const id = Number.parseInt(req.params.id)
     const name = req.body.name
@@ -137,7 +139,7 @@ router.patch('/products/:id', authenticator, authorize('manager'), async (req, r
 })
 
 // DELETE request handler for /products/:id endpoint (authenticated + authorized)
-router.delete('/products/:id', authenticator, authorize('manager'), async (req, res, next) => {
+router.delete('/products/:id', authenticator, authoriseManager, async (req, res, next) => {
   try {
     const id = Number.parseInt(req.params.id)
 

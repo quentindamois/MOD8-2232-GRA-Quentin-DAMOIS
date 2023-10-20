@@ -101,7 +101,7 @@ function canEditProduct() {
       <ProductHeader :product="product" />
       <p>{{ product.description }}</p>
 
-      <button @click="editProduct" class="edit"><EditIcon /></button>
+      <button @click="editProduct" class="edit" v-if="authenticationService.user.value != null && authenticationService.user.value.role == 'manager'"><EditIcon /></button>
 
       <ProductForm
         v-if="formIsEnabled"
@@ -115,7 +115,7 @@ function canEditProduct() {
         @primary-button-clicked="saveProduct"
         @secondary-button-clicked="deleteProduct"
       />
-    </div>
+    </div >
 
     <div v-else-if="product && productIsDeleted" class="content">
       <ProductHeader :product="product" />
